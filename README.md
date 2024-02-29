@@ -39,6 +39,15 @@ Initial Step after operating system install:
 
             export PATH=/usr/local/cuda-<version>/bin${PATH:+:${PATH}}
 
+      Now add this line to add lib64 to the PATH (C/C++ lib for CUDA) (Change <version> according to your install)
+
+            export LD_LIBRARY_PATH=/usr/local/cuda-<version>/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+      Now save the .bashrc file and source it.
+
+            source ~/.bashrc
+
+      
       
 
 
