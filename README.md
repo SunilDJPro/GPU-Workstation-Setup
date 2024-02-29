@@ -47,6 +47,14 @@ Initial Step after operating system install:
 
             source ~/.bashrc
 
+   2) CUDNN Installation - CUDA NEURAL NETWORK lib for optimal NN performance on RTX GPUs (NOT VERSION AGNOSTIC!)
+
+      Go to https://developer.nvidia.com/rdp/cudnn-download and login with nvidia developer account.
+      Then find an optimal version of cudnn version with your desired framework. Can cause runtime issues if not matched properly from source.
+      You should also math the appropriate CUDA toolkit version with the cudnn installer package.
+
+      
+
       
       
 
