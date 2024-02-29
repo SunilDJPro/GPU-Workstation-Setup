@@ -11,17 +11,19 @@ Initial Step after operating system install:
 
    1) Disable / Blacklist nouveau (default nvidia driver mostly on ubuntu)
 
-            sudo nautilus
-            Press Ctrl+l
-              get into /etc/modprobe.d/blacklist.conf as root
+                      sudo nautilus
+      Press Ctrl+l
+      get into /etc/modprobe.d/blacklist.conf as root
 
-                  add these lines at the last of the file
+      add these lines at the last of the file
+      
                       blacklist nouveau
                       options nouveau modeset=0
-                  save and close the file
-                  then enter update the initramfs using this command
-                      sudo update-initramfs -u
-                      sudo reboot
+      save and close the file
+      then enter update the initramfs using this command
+
+                     sudo update-initramfs -u
+                     sudo reboot
 
 
       
