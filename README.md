@@ -26,6 +26,10 @@ Initial Step after operating system install:
                      sudo reboot
 
       Then in Ubuntu you can open additional drivers and select the optimal nvidia drivers. Install, reboot and check the fluidity of GUI response.
+      Better use this command to install the gpu drivers. (CHECK THE VERSION & REPLACE ACCORDINGLY)
+
+                     sudo apt-get install nvidia-driver-525 (Replace 525 with required or latest one)
+
       BEWARE: CHECK THE OPTIMAL DRIVERS FOR THE PARTICULAR FRAMEWORK (CUDA Version,Release,etc) IF YOUR BUIDLING THEM FROM SOURCE! MAY CAUSE BUILD FAILURES OR RUNTIME ISSUES.
 
       Now we have to install CUDA Tool Kit for CUDA Ops with C++/Python API support.
@@ -47,7 +51,7 @@ Initial Step after operating system install:
 
             source ~/.bashrc
 
-   2) CUDNN Installation - CUDA NEURAL NETWORK lib for optimal NN performance on RTX GPUs (NOT VERSION AGNOSTIC!)
+   3) CUDNN Installation - CUDA NEURAL NETWORK lib for optimal NN performance on RTX GPUs (NOT VERSION AGNOSTIC!)
 
       Go to https://developer.nvidia.com/rdp/cudnn-download and login with nvidia developer account.
       Then find an optimal version of cudnn version with your desired framework. Can cause runtime issues if not matched properly from source.
