@@ -32,7 +32,7 @@ Initial Step after operating system install:
 
       BEWARE: CHECK THE OPTIMAL DRIVERS FOR THE PARTICULAR FRAMEWORK (CUDA Version,Release,etc) IF YOUR BUIDLING THEM FROM SOURCE! MAY CAUSE BUILD FAILURES OR RUNTIME ISSUES.
 
-      Now we have to install CUDA Tool Kit for CUDA Ops with C++/Python API support.
+      Now we have to install CUDA Tool Kit for CUDA Ops with C++/Python API support. Now the existing driver install may be replaced by the version required by the toolkit. But installing without the driver onboard can cause issues related to kernel.
       Go to https://developer.nvidia.com/cuda-downloads and CHECK the version of the CUDA with Update release. If its too advance than your requirement kindly do google Search for the optimal version and get the link. (Eg: Nvidia cuda toolkit 12.x ubuntu )
 
       Select the the required architecture (x86_64 or ARM64, PowerPC) and select the distribution and the version of it.
