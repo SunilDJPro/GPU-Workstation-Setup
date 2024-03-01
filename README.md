@@ -28,7 +28,7 @@ Initial Step after operating system install:
       Then in Ubuntu you can open additional drivers and select the optimal nvidia drivers. Install, reboot and check the fluidity of GUI response.
       Better use this command to install the gpu drivers. (CHECK THE VERSION & REPLACE ACCORDINGLY)
 
-                     sudo apt-get install nvidia-driver-525 (Replace 525 with required or latest one)
+                     sudo apt-get install nvidia-driver-535 (Replace 525 with required or latest one)
 
       BEWARE: CHECK THE OPTIMAL DRIVERS FOR THE PARTICULAR FRAMEWORK (CUDA Version,Release,etc) IF YOUR BUIDLING THEM FROM SOURCE! MAY CAUSE BUILD FAILURES OR RUNTIME ISSUES.
 
@@ -38,6 +38,15 @@ Initial Step after operating system install:
       Select the the required architecture (x86_64 or ARM64, PowerPC) and select the distribution and the version of it.
       Better choose the deb(local) for ubuntu and do the installation manually.
       Follow the installation commands sequentially and complete the update and apt-get install cuda-toolkit-xx.x.
+      This is an example isntallation procedure given b nvidia for cuda toolkit 12.2 (driver 535)
+
+                  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+                  sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+                  wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+                  sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+                  sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+                  sudo apt-get update
+                  sudo apt-get -y install cuda
 
       Now get into ~/.bashrc file (gedit ~/.bashrc) to reference the cuda version installed to the PATH so that we can use them. (VERY IMPORTANT STEP)
 
