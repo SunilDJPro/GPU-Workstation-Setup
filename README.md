@@ -100,7 +100,7 @@ Initial Step after operating system install:
 
    4) TensorRT installation.
 
-      Currently TensorRT doesn't support Cuda toolkit 12.2 as well as Cudnn 9.0. So Kindly refer the support matrix provided by nvidia and follow the installation guidelines. You can still prefer using the Python version of TensorRT which may support within the pip wheel installs of TensorFlow and Pytorch.
+      You can prefer using the Python version of TensorRT which may support within the pip wheel installs of TensorFlow and Pytorch.** Or else ignore the first part and proceed with TensorRT 10.0 installation.**
 
       Install cuda-Python before TensorRT python API
 
@@ -119,6 +119,33 @@ Initial Step after operating system install:
                print(tensorrt.__version__)
 
       If your getting any error probably could be the GPU Driver issue. Follow the guidelines provided by NVIDIA.
+
+   5) TensorRT 10.0 SDK installation
+
+        We can install TensorRT 10.0 for ubuntu 22.04 if your setup uses CUDA toolkit version 12.4 (Updated). This allows you to explore TensorRT using C/C++ and Python.
+      Head to https://developer.nvidia.com/tensorrt/download and find your suitable package (.DEB recommended as the zip files require manual placement of libraries which may not work as expected sometimes).
+      Then head to the Downloads section and execute the below command. (Note: You may need to change few marking on the file name so kinldy type and tab it to avoid confusions.)
+
+            sudo dpkg -i nv-tensorrt-local-repo-ubuntu2204-10.0.1-cuda-12.4_1.0-1_amd64.deb
+            sudo cp /var/nv-tensorrt-local-repo-ubuntu2204-10.0.1-cuda-12.4/nv-tensorrt-local-2C63AABB-keyring.gpg /usr/share/keyrings/
+            sudo apt-get update
+
+      Now you can proceed installing the TensorRT 10 for C++ and Python.
+
+                sudo apt-get install tensorrt
+
+      Now check the installation by querying the package.
+
+               dpkg-query -W tensorrt
+
+      If you get the appropriate version of isntallation without error then your installation is successfull.
+      This will also resolve the No TensorRT issue on TensorFlow and Pytorch.
+
+      
+
+      
+      
+           
             
 
       
